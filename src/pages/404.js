@@ -1,54 +1,31 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from "react";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+//Style
+import * as notFoundStyles from "../styles/pages/404.module.css";
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+//Custom
+import SearchEngineOptimization from "../components/SearchEngineOptimization";
+import Layout from "../components/layout/Layout";
 
-// markup
-const NotFoundPage = () => {
+//React-Bootstrap
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+export default function NotFoundPage() {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
+    <Layout>
+      <SearchEngineOptimization title="Not Found" />
+      <Container
+        fluid
+        className={`py-3 min-vh-100 d-flex justify-content-center ${notFoundStyles.notFoundContainer}`}
+      >
+        <Row className="align-items-center text-center">
+          <Col lg={true}>
+            <h1 className="fw-bold">Hello! This page isn't ready yet!</h1>
+          </Col>
+        </Row>
+      </Container>
+    </Layout>
+  );
 }
-
-export default NotFoundPage

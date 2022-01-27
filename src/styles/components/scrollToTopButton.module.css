@@ -1,0 +1,7 @@
+.scrollToTopButton {
+  border-radius: 50%;
+  z-index: 999;
+  position: fixed;
+  bottom: 2vh;
+  right: 2%;
+}

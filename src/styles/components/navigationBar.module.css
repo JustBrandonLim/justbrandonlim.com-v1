@@ -1,0 +1,10 @@
+.navLink {
+  color: black !important;
+}
+
+.navLink:hover {
+  color: red !important;
+  text-decoration-color: red;
+  text-decoration: underline;
+  text-underline-offset: 0.313rem;
+}

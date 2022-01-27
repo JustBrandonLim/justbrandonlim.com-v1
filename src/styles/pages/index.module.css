@@ -1,0 +1,37 @@
+.heroContainer {
+  background: ivory;
+  color: black;
+}
+
+.linksWrapper a {
+  color: black;
+}
+
+.linksWrapper a svg:hover {
+  color: red !important;
+}
+
+.heroImageWrapper {
+  border-radius: 50%;
+}
+
+.aboutContainer {
+  background: ivory;
+}
+
+.skillsContainer {
+  background: ivory;
+}
+
+.showcaseContainer {
+  background: ivory;
+}
+
+.seeMoreButton {
+  color: black;
+  background-color: red;
+}
+
+.contactContainer {
+  background: ivory;
+}
