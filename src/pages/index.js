@@ -141,6 +141,7 @@ export default function HomePage({ data }) {
             <GatsbyImage
               image={getImage(data.heroImage)}
               className={`shadow-lg ${indexStyles.heroImageWrapper}`}
+              imgClassName={`shadow-lg ${indexStyles.heroImage}`}
               alt="Hero Image"
             />
           </Col>

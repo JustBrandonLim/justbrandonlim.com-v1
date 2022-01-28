@@ -1,11 +1,14 @@
 module.exports = {
   siteMetadata: {
-    author: `Brandon Lim`,
+    title: `Brandon Lim`,
     description: `Welcome to my portfolio!`,
     keywords: `JustBrandonLim, Portfolio, Programming, Blog, CTF`,
     siteUrl: `https://justbrandonlim.github.io`,
-    title: `Brandon Lim`,
     language: `en`,
+    author: {
+      name: `Brandon Lim`,
+      description: `He is currently a student studying at Singapore Institute of Technology, majoring in BE in Information and Communications Technology (Software Engineering).`,
+    },
   },
   plugins: [
     {
@@ -24,6 +27,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: ["G-12L0HRBEDZ"],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     `gatsby-plugin-sitemap`,
@@ -77,9 +83,13 @@ module.exports = {
               quality: 100,
             },
           },
+          {
+            resolve: `gatsby-remark-highlight-code`,
+          },
         ],
       },
     },
     `gatsby-remark-reading-time`,
+    `gatsby-plugin-fontawesome-css`,
   ],
 };

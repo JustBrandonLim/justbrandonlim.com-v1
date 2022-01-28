@@ -10,6 +10,7 @@ import * as projectStyles from "../styles/templates/project.module.css";
 //Custom
 import SearchEngineOptimization from "../components/SearchEngineOptimization";
 import Layout from "../components/layout/Layout";
+import Author from "../components/Author";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 
 //React-Bootstrap
@@ -55,9 +56,14 @@ export default function ProjectPostPage({ data }) {
               <h5 className="text-muted">
                 {date} &bull; {timeToRead} min read
               </h5>
+              <hr />
               <section className="pt-3" itemProp="articleBody">
                 <MDXRenderer>{body}</MDXRenderer>
               </section>
+              <hr />
+              <footer>
+                <Author />
+              </footer>
             </article>
           </Col>
         </Row>

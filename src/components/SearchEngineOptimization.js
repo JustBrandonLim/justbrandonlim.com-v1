@@ -29,7 +29,6 @@ export default function SearchEngineOptimization({
     query querySiteMetadata {
       site {
         siteMetadata {
-          author
           description
           keywords
           siteUrl

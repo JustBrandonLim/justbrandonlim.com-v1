@@ -10,6 +10,7 @@ import * as blogPostStyles from "../styles/templates/blogPost.module.css";
 //Custom
 import SearchEngineOptimization from "../components/SearchEngineOptimization";
 import Layout from "../components/layout/Layout";
+import Author from "../components/Author";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 
 //React-Bootstrap
@@ -49,15 +50,22 @@ export default function BlogPostPage({ data }) {
               itemScope
               itemType="http://schema.org/Article"
             >
-              <h1 className="fw-bold" itemProp="headline">
-                {title}
-              </h1>
+              <header>
+                <h1 className="fw-bold" itemProp="headline">
+                  {title}
+                </h1>
+              </header>
               <h5 className="text-muted">
                 {date} &bull; {timeToRead} min read
               </h5>
-              <section className="pt-3" itemProp="articleBody">
+              <hr />
+              <section className="py-3" itemProp="articleBody">
                 <MDXRenderer>{body}</MDXRenderer>
               </section>
+              <hr />
+              <footer>
+                <Author />
+              </footer>
             </article>
           </Col>
         </Row>
