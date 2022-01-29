@@ -74,7 +74,6 @@ export default function ProjectsPage({ data }) {
               </Card>
             </Col>
           ))}
-          <Col lg={true}></Col>
         </Row>
       </Container>
       <ScrollToTopButton showBelow={150} />

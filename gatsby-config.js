@@ -7,7 +7,7 @@ module.exports = {
     language: `en`,
     author: {
       name: `Brandon Lim`,
-      description: `He is currently a student studying at Singapore Institute of Technology, majoring in BE in Information and Communications Technology (Software Engineering).`,
+      description: `He is currently a student studying at Singapore Institute of Technology (SIT), majoring in BE in Information and Communications Technology (Software Engineering).`,
     },
   },
   plugins: [

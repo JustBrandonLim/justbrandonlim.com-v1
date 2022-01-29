@@ -186,9 +186,9 @@ export default function HomePage({ data }) {
               Enrolled into Singapore Insititute of Technology (SIT), as a
               student majoring in BE in Information and Communications
               Technology (Software Engineering), I am working as a freelance
-              developer to hone my craft, gain more experience and learn on site
-              during every pocket of time I have apart from studying and working
-              on personal projects.
+              developer to hone my craft, gain more experience and learn on the
+              fly during every pocket of time I have apart from studying and
+              working on my personal projects.
             </p>
 
             <p>

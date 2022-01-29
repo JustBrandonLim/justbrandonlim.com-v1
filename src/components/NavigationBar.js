@@ -13,7 +13,7 @@ export default function NavigationBar() {
         <Navbar.Brand href="/">BRANDON LIM</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto" activeKey="">
+          <Nav className="" activeKey="">
             <Nav.Link href="/#about" className={navigationBarStyles.navLink}>
               ABOUT
             </Nav.Link>
@@ -27,7 +27,10 @@ export default function NavigationBar() {
               CONTACT
             </Nav.Link>
           </Nav>
-          <Nav activeKey="">
+          <Nav className="ms-auto" activeKey="">
+            <Nav.Link href="/resume" className={navigationBarStyles.navLink}>
+              RESUME
+            </Nav.Link>
             <Nav.Link href="/projects" className={navigationBarStyles.navLink}>
               PROJECTS
             </Nav.Link>
