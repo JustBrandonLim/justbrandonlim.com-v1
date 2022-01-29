@@ -94,11 +94,6 @@ export default function ResumePage({ data }) {
             </p>
           </Col>
         </Row>
-        <Row className="justify-content-center text-center">
-          <Col lg={true}>
-            <p className="fw-bold">More certifications will be added soon.</p>
-          </Col>
-        </Row>
       </Container>
       <ScrollToTopButton showBelow={150} />
     </Layout>
