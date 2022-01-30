@@ -100,7 +100,7 @@ export default function HomePage({ data }) {
         className={`py-3 min-vh-100 d-flex justify-content-center ${indexStyles.heroContainer}`}
       >
         <Row className="align-items-center text-center">
-          <Col lg={8} className="p-3">
+          <Col lg={8}>
             <p>
               Hi, I'm Brandon Lim, a student, software and full stack developer.
             </p>
@@ -137,7 +137,7 @@ export default function HomePage({ data }) {
               </a>
             </Stack>
           </Col>
-          <Col lg={4} className="p-3">
+          <Col lg={4}>
             <GatsbyImage
               image={getImage(data.heroImage)}
               className={`shadow-lg ${indexStyles.heroImageWrapper}`}
