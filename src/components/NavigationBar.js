@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import * as navigationBarStyles from "../styles/components/navigationbar.module.css";
+import * as navigationBarStyles from "../styles/components/navigationBar.module.css";
 
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
