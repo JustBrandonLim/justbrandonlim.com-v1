@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Brandon Lim`,
-    description: `Welcome to my portfolio!`,
+    description: `Hello! My name is Brandon Lim and I am currently a student studying at Singapore Institute of Technology (SIT), majoring in BE in Informations and Communications Technology (Software Engineering). I am enthusiastic about programming and fitness.`,
     keywords: `JustBrandonLim, Portfolio, Programming, Blog, CTF`,
-    siteUrl: `https://justbrandonlim.github.io`,
+    siteUrl: `https://justbrandonlim.com/`,
     language: `en`,
     author: {
       name: `Brandon Lim`,

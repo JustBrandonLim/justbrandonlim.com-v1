@@ -302,7 +302,7 @@ export default function HomePage({ data }) {
         <Row className="text-center">
           <Col lg={true}>
             <FontAwesomeIcon icon={faEnvelope} size="2x" className="mx-auto" />
-            <p>justbrandonlim@gmail.com</p>
+            <p>hello@justbrandonlim.com</p>
 
             <FontAwesomeIcon icon={faPhone} size="2x" className="mx-auto" />
             <p>(+65) 8692 3241</p>
