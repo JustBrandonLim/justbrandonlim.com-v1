@@ -30,9 +30,11 @@
   background: ivory;
 }
 
-.seeMoreButton {
-  color: black;
-  background-color: red;
+.carouselCaption {
+  color: red;
+  text-decoration-color: red;
+  text-decoration: underline;
+  text-underline-offset: 0.313rem;
 }
 
 .contactContainer {

@@ -220,6 +220,7 @@ export default function HomePage({ data }) {
                 <p>C#</p>
                 <p>Java</p>
                 <p>Python</p>
+                <p>Visual Basic</p>
                 <p>Assembly</p>
                 <p>Android Debug Bridge</p>
               </Card.Body>
@@ -243,6 +244,13 @@ export default function HomePage({ data }) {
             </Card>
           </Col>
         </Row>
+        <Row className="text-center">
+          <Col lg={true}>
+            <Button variant="danger" href="/resume" aria-label="View my resume">
+              VIEW MY RESUME
+            </Button>
+          </Col>
+        </Row>
       </Container>
       <Container
         fluid
@@ -256,13 +264,17 @@ export default function HomePage({ data }) {
         </Row>
         <Row className="justify-content-center text-center">
           <Col lg={8}>
-            <Carousel fade variant="dark" className="shadow-lg">
+            <Carousel fade className="shadow-lg">
               <Carousel.Item>
                 <GatsbyImage
                   image={getImage(data.firstProject)}
                   className="d-block"
                   alt="First Slide"
                 />
+                <Carousel.Caption className={indexStyles.carouselCaption}>
+                  <h3 className="fw-bold">Portfolio</h3>
+                  <p>Created with Gatsby and React-Bootstrap.</p>
+                </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
                 <GatsbyImage
@@ -270,6 +282,10 @@ export default function HomePage({ data }) {
                   className="d-block"
                   alt="Second Slide"
                 />
+                <Carousel.Caption className={indexStyles.carouselCaption}>
+                  <h3 className="fw-bold">TimetableGrabber - SIT</h3>
+                  <p>Created with C# and Selenium.</p>
+                </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
                 <GatsbyImage
@@ -277,14 +293,22 @@ export default function HomePage({ data }) {
                   className="d-block"
                   alt="Third Slide"
                 />
+                <Carousel.Caption className={indexStyles.carouselCaption}>
+                  <h3 className="fw-bold">FastDrivingPractical</h3>
+                  <p>Created with C#.</p>
+                </Carousel.Caption>
               </Carousel.Item>
             </Carousel>
           </Col>
         </Row>
         <Row className="pt-3 text-center">
           <Col lg={true}>
-            <Button variant="danger" href="/projects" aria-label="View more">
-              VIEW MORE
+            <Button
+              variant="danger"
+              href="/projects"
+              aria-label="View more projects"
+            >
+              VIEW MORE PROJECTS
             </Button>
           </Col>
         </Row>
@@ -303,12 +327,6 @@ export default function HomePage({ data }) {
           <Col lg={true}>
             <FontAwesomeIcon icon={faEnvelope} size="2x" className="mx-auto" />
             <p>hello@justbrandonlim.com</p>
-
-            <FontAwesomeIcon icon={faPhone} size="2x" className="mx-auto" />
-            <p>(+65) 8692 3241</p>
-
-            <FontAwesomeIcon icon={faDiscord} size="2x" className="mx-auto" />
-            <p>BRANDON#7824</p>
           </Col>
         </Row>
       </Container>
