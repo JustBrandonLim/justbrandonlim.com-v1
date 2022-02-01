@@ -28,17 +28,18 @@ export const queryProjectPostPage = graphql`
       }
       timeToRead
       body
+      excerpt
     }
   }
 `;
 
 export default function ProjectPostPage({ data }) {
-  const { body, timeToRead } = data.mdx;
-  const { title, date, description } = data.mdx.frontmatter;
+  const { body, timeToRead, excerpt } = data.mdx;
+  const { title, date } = data.mdx.frontmatter;
 
   return (
     <Layout>
-      <SearchEngineOptimization title={title} description={description} />
+      <SearchEngineOptimization title={title} description={excerpt} />
       <Container
         fluid
         className={`py-3 min-vh-100 ${projectStyles.projectContainer}`}

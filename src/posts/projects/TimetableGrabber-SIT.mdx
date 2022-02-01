@@ -6,28 +6,28 @@ slug: "timetablegrabber-sit"
 description: "This is an open sourced project titled TimetableGrabber - SIT."
 ---
 
-Back when I was in **Ngee Ann Polytechnic** pursuing my **Diploma in Information Technology**,
+Back when I was in Ngee Ann Polytechnic pursuing my Diploma in Information Technology,
 the school's website allowed us to export our timetables to our phone's calendar conveniently.
 This meant that we would not need to login every week to check our timetable, saving valuable
 time that could be used for other meaningful purposes.
 
 ### About TimetableGrabber - SIT
 
-**TimetableGrabber - SIT** is a tool that allows you to grab and export your trimester's timetable
+TimetableGrabber - SIT is a tool that allows you to grab and export your trimester's timetable
 to the _.ics_ format where you can import it to your favourite calendar.
 
 ### How it's done
 
-For simplicity sake, I decided to use **C#** with **XAML** to code this program.
+For simplicity sake, I decided to use C# with XAML to code this program.
 
-At first, I thought of using **HTTP requests** to scrape the timetable data, since it is fast because
+At first, I thought of using HTTP requests to scrape the timetable data, since it is fast because
 there is no rendering of the web pages. However, when trying out my proposed solution, my program did
-not work as I expected. Upon further debugging, I soon realized that **IN4SIT** is mostly built with
-**iframes** and **JavaScript** which meant that using pure **HTTP requests** would not work properly
+not work as I expected. Upon further debugging, I soon realized that IN4SIT is mostly built with
+iframes and JavaScript which meant that using pure HTTP requests would not work properly
 for this project.
 
-However, there was another solution to this problem. I decided to use **Selenium** with **Html Agility Pack**
-since it was automated and I am able to hide the browser with **headless Chrome**.
+However, there was another solution to this problem. I decided to use Selenium with Html Agility Pack
+since it was automated and I am able to hide the browser with headless Chrome.
 
 ```csharp
 ChromeDriverService chromeDriverService = ChromeDriverService.CreateDefaultService();
@@ -42,19 +42,19 @@ webDriverInstance = new ChromeDriver(chromeDriverService, chromeOptions);
 webDriverInstance.Manage().Window.Maximize();
 ```
 
-There were a few more hiccups along the way, such as **IN4SIT** generating dynamic CSS, which meant that I
-had to use **XPath** instead of **CssSelector**.
+There were a few more hiccups along the way, such as IN4SIT generating dynamic CSS, which meant that I
+had to use XPath instead of CssSelector.
 
 Once I was able to login and reach the timetable's page, I had to scrape the data. I used
-**Html Agility Pack** to achieve this.
+Html Agility Pack to achieve this.
 
 ```csharp
 HtmlDocument htmlDocument = new HtmlDocument();
 htmlDocument.LoadHtml(webDriverInstance.PageSource);
 ```
 
-After scraping the data, I then used a library called **[ical.NET](https://github.com/rianjs/ical.net/)** to export
-the data into the **.ics** format which can be imported to almost any calendar.
+After scraping the data, I then used a library called ical.NET to export
+the data into the .ics format which can be imported to almost any calendar.
 
 ```csharp
 Calendar exportCalendar = new Calendar();

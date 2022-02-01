@@ -23,13 +23,12 @@ import Button from "react-bootstrap/Button";
 
 //FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMugHot, faEnvelope, faEye } from "@fortawesome/free-solid-svg-icons";
+import { faMugHot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithubSquare,
   faLinkedin,
   faHackerrank,
   faInstagramSquare,
-  faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 
 export const queryIndexPage = graphql`
@@ -75,9 +74,7 @@ export default function HomePage({ data }) {
       >
         <Row className="align-items-center text-center">
           <Col lg={8}>
-            <p>
-              Hi, I'm Brandon Lim, a student, software and full stack developer.
-            </p>
+            <p>Hi, I'm Brandon Lim, a student, and a developer.</p>
             <h1 className="fw-bold">I love to learn and code.</h1>
             <p>Let's find out more about me.</p>
             <Stack
