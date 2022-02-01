@@ -1,7 +1,7 @@
 .linksWrapper a {
-  color: black;
+  color: #212529;
 }
 
 .linksWrapper a svg:hover {
-  color: red !important;
+  color: #0d6efd !important;
 }

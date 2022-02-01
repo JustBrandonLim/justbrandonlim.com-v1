@@ -1,10 +1,8 @@
 .navLink {
-  color: black !important;
+  color: #212529 !important;
 }
 
 .navLink:hover {
-  color: red !important;
-  text-decoration-color: red;
   text-decoration: underline;
   text-underline-offset: 0.313rem;
 }

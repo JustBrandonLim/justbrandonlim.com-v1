@@ -44,7 +44,7 @@ export default function BlogPostPage({ data }) {
         className={`py-3 min-vh-100 ${blogPostStyles.blogPostContainer}`}
       >
         <Row className="justify-content-center">
-          <Col lg={4}>
+          <Col lg={6}>
             <article
               className={blogPostStyles.article}
               itemScope

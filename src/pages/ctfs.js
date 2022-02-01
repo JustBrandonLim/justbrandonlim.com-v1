@@ -32,6 +32,7 @@ export const queryCaptureTheFlagsPage = graphql`
         }
         timeToRead
         id
+        excerpt
       }
     }
   }
@@ -61,13 +62,13 @@ export default function CaptureTheFlagsPage({ data }) {
                   <Card.Subtitle className="text-muted">
                     {ctf.frontmatter.date} &bull; {ctf.timeToRead} min read
                   </Card.Subtitle>
-                  <Card.Text>{ctf.frontmatter.description}</Card.Text>
+                  <Card.Text>{ctf.excerpt}</Card.Text>
                   <Button
-                    variant="danger"
+                    variant="dark"
                     href={"/ctfs/" + ctf.frontmatter.slug}
-                    aria-label="View CTF"
+                    aria-label="Read more"
                   >
-                    VIEW CTF
+                    READ MORE
                   </Button>
                 </Card.Body>
               </Card>

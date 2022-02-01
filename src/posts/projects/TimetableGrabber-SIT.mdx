@@ -6,17 +6,88 @@ slug: "timetablegrabber-sit"
 description: "This is an open sourced project titled TimetableGrabber - SIT."
 ---
 
-## Introduction
+Back when I was in **Ngee Ann Polytechnic** pursuing my **Diploma in Information Technology**,
+the school's website allowed us to export our timetables to our phone's calendar conveniently.
+This meant that we would not need to login every week to check our timetable, saving valuable
+time that could be used for other meaningful purposes.
 
-TimetableGrabber - SIT is a tool that allows you to grab and export your trimester's timetable to the .ics format where you can import it to your favourite calendar.
+### About TimetableGrabber - SIT
 
-## Showcase
+**TimetableGrabber - SIT** is a tool that allows you to grab and export your trimester's timetable
+to the _.ics_ format where you can import it to your favourite calendar.
+
+### How it's done
+
+For simplicity sake, I decided to use **C#** with **XAML** to code this program.
+
+At first, I thought of using **HTTP requests** to scrape the timetable data, since it is fast because
+there is no rendering of the web pages. However, when trying out my proposed solution, my program did
+not work as I expected. Upon further debugging, I soon realized that **IN4SIT** is mostly built with
+**iframes** and **JavaScript** which meant that using pure **HTTP requests** would not work properly
+for this project.
+
+However, there was another solution to this problem. I decided to use **Selenium** with **Html Agility Pack**
+since it was automated and I am able to hide the browser with **headless Chrome**.
+
+```csharp
+ChromeDriverService chromeDriverService = ChromeDriverService.CreateDefaultService();
+chromeDriverService.HideCommandPromptWindow = true;
+
+ChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.AddArgument("headless");
+chromeOptions.AddArgument("--window-size=1920,1080");
+chromeOptions.AddArgument("--disable-extensions");
+
+webDriverInstance = new ChromeDriver(chromeDriverService, chromeOptions);
+webDriverInstance.Manage().Window.Maximize();
+```
+
+There were a few more hiccups along the way, such as **IN4SIT** generating dynamic CSS, which meant that I
+had to use **XPath** instead of **CssSelector**.
+
+Once I was able to login and reach the timetable's page, I had to scrape the data. I used
+**Html Agility Pack** to achieve this.
+
+```csharp
+HtmlDocument htmlDocument = new HtmlDocument();
+htmlDocument.LoadHtml(webDriverInstance.PageSource);
+```
+
+After scraping the data, I then used a library called **[ical.NET](https://github.com/rianjs/ical.net/)** to export
+the data into the **.ics** format which can be imported to almost any calendar.
+
+```csharp
+Calendar exportCalendar = new Calendar();
+
+foreach (Course course in timetable)
+{
+    CalendarEvent calendarEvent = new CalendarEvent
+    {
+        Summary = string.Format("{0} - {1} - {2}", course.Name, course.Section, course.Component),
+        Start = new CalDateTime(course.StartDateTime),
+        End = new CalDateTime(course.EndDateTime),
+        Location = course.Location
+    };
+
+    exportCalendar.Events.Add(calendarEvent);
+}
+
+CalendarSerializer calendarSerializer = new CalendarSerializer();
+string serializedCalendar = calendarSerializer.SerializeToString(exportCalendar);
+```
+
+Viola! The program was working after a day of hard work!
+
+### Screenshots
 
 ![User Interface of TimetableGrabber - SIT](../../images/posts/projects/TimetableGrabber-SIT/UserInterface.png)
-User Interface of TimetableGrabber - SIT
+User Interface of FastDrivingPractical
 
-![TimetableGrabber - SIT exported to iOS](../../images/posts/projects/TimetableGrabber-SIT/iOS.png)
-TimetableGrabber - SIT exported to iOS
+### Summary
 
-![TimetableGrabber - SIT exported to Android](../../images/posts/projects/TimetableGrabber-SIT/Android.png)
-TimetableGrabber - SIT exported to Android
+If you are interested in TimetableGrabber - SIT's source code, it is available
+[here](https://github.com/JustBrandonLim/TimetableGrabber-SIT) on my
+[GitHub](https://github.com/JustBrandonLim). This project is open sourced and licensed under the
+MIT License.
+
+Thank you for reading!

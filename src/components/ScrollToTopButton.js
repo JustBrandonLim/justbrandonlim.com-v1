@@ -36,7 +36,7 @@ export default function ScrollToTopButton({ showBelow }) {
     <>
       {showButton && (
         <Button
-          variant="danger"
+          variant="dark"
           onClick={handleClick}
           className={scrollToTopButtonStyles.scrollToTopButton}
           aria-label="Scroll to top"

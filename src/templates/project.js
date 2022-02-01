@@ -44,7 +44,7 @@ export default function ProjectPostPage({ data }) {
         className={`py-3 min-vh-100 ${projectStyles.projectContainer}`}
       >
         <Row className="justify-content-center">
-          <Col lg={4}>
+          <Col lg={6}>
             <article
               className={projectStyles.article}
               itemScope

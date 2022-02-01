@@ -41,7 +41,7 @@ export default function CaptureTheFlagPostPage({ data }) {
       <SearchEngineOptimization title={title} description={description} />
       <Container fluid className={`py-3 min-vh-100 ${ctfStyles.ctfContainer}`}>
         <Row className="justify-content-center">
-          <Col lg={4}>
+          <Col lg={6}>
             <article
               className={ctfStyles.article}
               itemScope

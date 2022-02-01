@@ -3,11 +3,11 @@
 }
 
 .linksWrapper a {
-  color: black;
+  color: #212529;
 }
 
 .linksWrapper a svg:hover {
-  color: red !important;
+  color: #0d6efd !important;
 }
 
 .heroImageWrapper {
@@ -28,13 +28,6 @@
 
 .showcaseContainer {
   background: ivory;
-}
-
-.carouselCaption {
-  color: red;
-  text-decoration-color: red;
-  text-decoration: underline;
-  text-underline-offset: 0.313rem;
 }
 
 .contactContainer {

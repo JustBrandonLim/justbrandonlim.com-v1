@@ -32,6 +32,7 @@ export const queryBlogPage = graphql`
         }
         timeToRead
         id
+        excerpt
       }
     }
   }
@@ -61,13 +62,13 @@ export default function ProjectsPage({ data }) {
                   <Card.Subtitle className="text-muted">
                     {blog.frontmatter.date} &bull; {blog.timeToRead} min read
                   </Card.Subtitle>
-                  <Card.Text>{blog.frontmatter.description}</Card.Text>
+                  <Card.Text>{blog.excerpt}</Card.Text>
                   <Button
-                    variant="danger"
+                    variant="dark"
                     href={"/blog/" + blog.frontmatter.slug}
-                    aria-label="View blog post"
+                    aria-label="Read more"
                   >
-                    VIEW BLOG POST
+                    READ MORE
                   </Button>
                 </Card.Body>
               </Card>

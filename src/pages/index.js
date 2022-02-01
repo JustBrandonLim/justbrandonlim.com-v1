@@ -18,16 +18,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Stack from "react-bootstrap/Stack";
 import Card from "react-bootstrap/Card";
-import Carousel from "react-bootstrap/Carousel";
+import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 
 //FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMugHot,
-  faEnvelope,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMugHot, faEnvelope, faEye } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithubSquare,
   faLinkedin,
@@ -49,43 +45,21 @@ export const queryIndexPage = graphql`
         )
       }
     }
-    firstProject: file(
-      relativePath: { eq: "showcase/My-Portfolio-Website.png" }
+    allMdx(
+      sort: { order: DESC, fields: frontmatter___date }
+      filter: { frontmatter: { type: { eq: "project" } } }
+      limit: 3
     ) {
-      childImageSharp {
-        gatsbyImageData(
-          formats: WEBP
-          placeholder: BLURRED
-          quality: 100
-          height: 400
-          width: 800
-        )
-      }
-    }
-    secondProject: file(
-      relativePath: { eq: "showcase/TimetableGrabber-SIT.png" }
-    ) {
-      childImageSharp {
-        gatsbyImageData(
-          formats: WEBP
-          placeholder: BLURRED
-          quality: 100
-          height: 400
-          width: 800
-        )
-      }
-    }
-    thirdProject: file(
-      relativePath: { eq: "showcase/FastDrivingPractical.png" }
-    ) {
-      childImageSharp {
-        gatsbyImageData(
-          formats: WEBP
-          placeholder: BLURRED
-          quality: 100
-          height: 400
-          width: 800
-        )
+      nodes {
+        frontmatter {
+          title
+          slug
+          description
+          date(formatString: "MMMM DD, YYYY")
+        }
+        timeToRead
+        id
+        excerpt
       }
     }
   }
@@ -246,69 +220,41 @@ export default function HomePage({ data }) {
         </Row>
         <Row className="text-center">
           <Col lg={true}>
-            <Button variant="danger" href="/resume" aria-label="View my resume">
-              VIEW MY RESUME
+            <Button variant="dark" href="/resume" aria-label="View resume">
+              VIEW RESUME
             </Button>
           </Col>
         </Row>
       </Container>
       <Container
         fluid
-        id="showcase"
+        id="experience"
         className={`py-3 ${indexStyles.showcaseContainer}`}
       >
         <Row className="text-center">
           <Col lg={true}>
-            <h2 className="fw-bold">SHOWCASE</h2>
+            <h2 className="fw-bold">EXPERIENCE</h2>
           </Col>
         </Row>
         <Row className="justify-content-center text-center">
-          <Col lg={8}>
-            <Carousel fade className="shadow-lg">
-              <Carousel.Item>
-                <GatsbyImage
-                  image={getImage(data.firstProject)}
-                  className="d-block"
-                  alt="First Slide"
-                />
-                <Carousel.Caption className={indexStyles.carouselCaption}>
-                  <h3 className="fw-bold">Portfolio</h3>
-                  <p>Created with Gatsby and React-Bootstrap.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <GatsbyImage
-                  image={getImage(data.secondProject)}
-                  className="d-block"
-                  alt="Second Slide"
-                />
-                <Carousel.Caption className={indexStyles.carouselCaption}>
-                  <h3 className="fw-bold">TimetableGrabber - SIT</h3>
-                  <p>Created with C# and Selenium.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <GatsbyImage
-                  image={getImage(data.thirdProject)}
-                  className="d-block"
-                  alt="Third Slide"
-                />
-                <Carousel.Caption className={indexStyles.carouselCaption}>
-                  <h3 className="fw-bold">FastDrivingPractical</h3>
-                  <p>Created with C#.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-            </Carousel>
+          <Col lg={4}>
+            <Accordion defaultActiveKey="0">
+              {data.allMdx.nodes.map((project, i) => (
+                <Accordion.Item eventKey={i}>
+                  <Accordion.Header>
+                    {project.frontmatter.title} &bull; {project.timeToRead} min
+                    read
+                  </Accordion.Header>
+                  <Accordion.Body>{project.excerpt}</Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
           </Col>
         </Row>
         <Row className="pt-3 text-center">
           <Col lg={true}>
-            <Button
-              variant="danger"
-              href="/projects"
-              aria-label="View more projects"
-            >
-              VIEW MORE PROJECTS
+            <Button variant="dark" href="/projects" aria-label="View more">
+              VIEW MORE
             </Button>
           </Col>
         </Row>

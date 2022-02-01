@@ -20,8 +20,11 @@ export default function NavigationBar() {
             <Nav.Link href="/#skills" className={navigationBarStyles.navLink}>
               SKILLS
             </Nav.Link>
-            <Nav.Link href="/#showcase" className={navigationBarStyles.navLink}>
-              SHOWCASE
+            <Nav.Link
+              href="/#experience"
+              className={navigationBarStyles.navLink}
+            >
+              EXPERIENCE
             </Nav.Link>
             <Nav.Link href="/#contact" className={navigationBarStyles.navLink}>
               CONTACT

@@ -32,6 +32,7 @@ export const queryProjectsPage = graphql`
         }
         timeToRead
         id
+        excerpt
       }
     }
   }
@@ -62,13 +63,13 @@ export default function ProjectsPage({ data }) {
                     {project.frontmatter.date} &bull; {project.timeToRead} min
                     read
                   </Card.Subtitle>
-                  <Card.Text>{project.frontmatter.description}</Card.Text>
+                  <Card.Text>{project.excerpt}</Card.Text>
                   <Button
-                    variant="danger"
+                    variant="dark"
                     href={"/projects/" + project.frontmatter.slug}
-                    aria-label="View project"
+                    aria-label="Read more"
                   >
-                    VIEW PROJECT
+                    READ MORE
                   </Button>
                 </Card.Body>
               </Card>
