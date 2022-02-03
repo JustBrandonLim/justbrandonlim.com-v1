@@ -211,6 +211,7 @@ export default function HomePage({ data }) {
                 <p>jQuery</p>
                 <p>Bootstrap</p>
                 <p>TailwindCSS</p>
+                <p>Markdown</p>
               </Card.Body>
             </Card>
           </Col>
@@ -237,7 +238,7 @@ export default function HomePage({ data }) {
           <Col lg={4}>
             <Accordion defaultActiveKey="0">
               {data.allMdx.nodes.map((project, i) => (
-                <Accordion.Item eventKey={i}>
+                <Accordion.Item eventKey={i} key={project.id}>
                   <Accordion.Header>
                     {project.frontmatter.title} &bull; {project.timeToRead} min
                     read
