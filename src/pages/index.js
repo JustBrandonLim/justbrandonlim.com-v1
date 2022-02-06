@@ -194,9 +194,12 @@ export default function HomePage({ data }) {
                 <p>C#</p>
                 <p>Java</p>
                 <p>Python</p>
-                <p>Visual Basic</p>
                 <p>Assembly</p>
+                <p>SQL</p>
+                <p>SignalR</p>
                 <p>Android Debug Bridge</p>
+                <p>Selenium</p>
+                <p>SolrAPI</p>
               </Card.Body>
             </Card>
           </Col>
@@ -207,10 +210,10 @@ export default function HomePage({ data }) {
                 <p>HTML5</p>
                 <p>CSS3</p>
                 <p>JavaScript</p>
-                <p>PHP</p>
                 <p>React</p>
                 <p>Gatsby</p>
                 <p>Next.js</p>
+                <p>PHP</p>
                 <p>jQuery</p>
                 <p>Bootstrap</p>
                 <p>TailwindCSS</p>
@@ -221,8 +224,8 @@ export default function HomePage({ data }) {
         </Row>
         <Row className="text-center">
           <Col lg={true}>
-            <Button variant="dark" href="/resume" aria-label="View resume">
-              VIEW RESUME
+            <Button variant="dark" href="/resume" aria-label="View my resume">
+              VIEW MY RESUME
             </Button>
           </Col>
         </Row>
@@ -246,7 +249,16 @@ export default function HomePage({ data }) {
                     {project.frontmatter.title} &bull; {project.timeToRead} min
                     read
                   </Accordion.Header>
-                  <Accordion.Body>{project.excerpt}</Accordion.Body>
+                  <Accordion.Body>
+                    <p>{project.excerpt}</p>
+                    <Button
+                      variant="dark"
+                      href={`projects/${project.frontmatter.slug}`}
+                      aria-label="Continue reading"
+                    >
+                      CONTINUE READING
+                    </Button>
+                  </Accordion.Body>
                 </Accordion.Item>
               ))}
             </Accordion>
@@ -254,8 +266,12 @@ export default function HomePage({ data }) {
         </Row>
         <Row className="pt-3 text-center">
           <Col lg={true}>
-            <Button variant="dark" href="/projects" aria-label="View more">
-              VIEW MORE
+            <Button
+              variant="dark"
+              href="/projects"
+              aria-label="View all my projects"
+            >
+              VIEW ALL MY PROJECTS
             </Button>
           </Col>
         </Row>

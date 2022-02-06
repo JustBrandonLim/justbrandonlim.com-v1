@@ -67,9 +67,9 @@ export default function ProjectsPage({ data }) {
                   <Button
                     variant="dark"
                     href={"/projects/" + project.frontmatter.slug}
-                    aria-label="Read more"
+                    aria-label="Continue reading"
                   >
-                    READ MORE
+                    CONTINUE READING
                   </Button>
                 </Card.Body>
               </Card>
