@@ -167,7 +167,7 @@ export default function HomePage({ data }) {
 
             <p>
               My fervent passion for programming is fueled throughout my years
-              of gaming, research and self-educating.
+              of studying and self-educating.
             </p>
 
             <p>To me, programming is a form of art, similar to literature.</p>

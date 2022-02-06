@@ -7,7 +7,7 @@ module.exports = {
     language: `en`,
     author: {
       name: `Brandon Lim`,
-      description: `He is currently a student studying at Singapore Institute of Technology (SIT), majoring in BE in Information and Communications Technology (Software Engineering).`,
+      description: `He is currently a student studying at Singapore Institute of Technology (SIT), majoring in BE in Information and Communications Technology (Software Engineering). He dreams of being an entrepreneur and a great developer.`,
     },
   },
   plugins: [
@@ -19,7 +19,7 @@ module.exports = {
         short_name: `BL`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#ff0000`,
+        theme_color: `#000000`,
         display: `standalone`,
         icon: `src/images/icon.png`,
       },
