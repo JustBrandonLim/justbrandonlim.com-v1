@@ -59,9 +59,10 @@ export default function Footer() {
         </Row>
         <Row className="justify-content-center text-center">
           <Col lg={true}>
-            <p>Designed and coded by Brandon Lim.</p>
+            <p>
+              Designed and coded by <strong>Brandon Lim</strong>.
+            </p>
             <p>Copyright &copy; 2022 - Present. All rights reserved.</p>
-            <p>Created with Gatsby and React-Bootstrap.</p>
           </Col>
         </Row>
       </Container>

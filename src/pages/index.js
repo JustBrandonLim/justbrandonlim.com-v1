@@ -74,7 +74,10 @@ export default function HomePage({ data }) {
       >
         <Row className="align-items-center text-center">
           <Col lg={8}>
-            <p>Hi, I'm Brandon Lim, a student, and a developer.</p>
+            <p>
+              Hi, I'm Brandon Lim, a student, and a developer based in
+              Singapore.
+            </p>
             <h1 className="fw-bold">I love to learn and code.</h1>
             <p>Let's find out more about me.</p>
             <Stack
